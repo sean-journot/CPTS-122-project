@@ -1,8 +1,8 @@
 #pragma once
-#include "Board.h"
+#include "GameObject.h"
 
 class BoardSquare
-	:public Board
+	:public GameObject, public sf::Sprite
 {
 
 };

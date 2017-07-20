@@ -1,8 +1,14 @@
 #pragma once
-#include "GameObject.h"
+#include "GameManager.h"
 
 class Board
-	:public GameObject, public sf::Sprite
 {
-
+public:
+	Board(GameManager & _manager);
+	~Board();
+private:
+	ChessPiece * playerPieces[16];
+	ChessPiece * enemyPieces[16];
+	BoardSquare * boardSqr[64];
+	BoardBorder * boardBdr[4];
 };

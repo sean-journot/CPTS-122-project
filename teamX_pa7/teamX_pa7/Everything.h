@@ -1,0 +1,10 @@
+#pragma once
+#include "Bishop.h"
+#include "Pawn.h"
+#include "Rook.h"
+#include "Knight.h"
+#include "King.h"
+#include "Queen.h"
+#include "BoardBorder.h"
+#include "BoardSquare.h"
+#include "Board.h"

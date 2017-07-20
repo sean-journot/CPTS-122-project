@@ -82,6 +82,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GameManger.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +91,8 @@
     <ClInclude Include="BoardBorder.h" />
     <ClInclude Include="BoardSquare.h" />
     <ClInclude Include="ChessPiece.h" />
+    <ClInclude Include="Everything.h" />
+    <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="King.h" />
     <ClInclude Include="Knight.h" />
