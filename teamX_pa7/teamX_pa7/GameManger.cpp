@@ -5,3 +5,6 @@ GameManager::GameManager()
 {
 
 }
+void GameManager::draw(sf::RenderWindow _window){
+	
+}

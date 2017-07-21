@@ -1,3 +1,4 @@
+#pragma once
 #include "Everything.h"
 
 class GameManager{
