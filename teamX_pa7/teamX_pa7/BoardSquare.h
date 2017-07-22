@@ -1,9 +1,12 @@
 #pragma once
-#include "GameManager.h"
+#include <SFML/Graphics.hpp>
 #include "GameObject.h"
+#include "ChessPiece.h"
+
+class GameManager;
 
 class BoardSquare
-	:public GameObject, public sf::Sprite
+	:public GameObject
 {
 public:
 	void setCallBack(ChessPiece * _callBack);
@@ -13,6 +16,7 @@ public:
 	BoardSquare(GameManager & _manager, sf::Texture & _texture, sf::Vector2f _pos = sf::Vector2f(0, 0));
 	~BoardSquare();
 private:
+	sf::Sprite sprite;
 	GameManager & manager;
 	ChessPiece * callBack;
 	friend class Board;
@@ -22,3 +26,5 @@ private:
 	BoardSquare * rPtr;
 	ChessPiece * pPtr;
 };
+
+#include "GameManager.h"

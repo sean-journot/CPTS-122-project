@@ -9,7 +9,8 @@ public:
 	bool isClickable(){ return clickable; }
 	virtual void onClick() = 0;
 	GameObject(){ clickable = false; }
-	virtual ~GameObject();
+	virtual ~GameObject(){
+	}
 private:
 	bool clickable;
 };

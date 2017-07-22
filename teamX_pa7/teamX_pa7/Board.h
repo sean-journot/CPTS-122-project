@@ -1,13 +1,19 @@
 #pragma once
+#include <SFML/Graphics.hpp>
 #include "GameManager.h"
+#include "ChessPiece.h"
+#include "BoardSquare.h"
+#include "BoardBorder.h"
+
+class GameManager;
 
 class Board
 {
 public:
-	Board(GameManager & _manager);
+	Board(GameManager * _manager);
 	~Board();
 private:
-	GameManager & manager;
+	GameManager * manager;
 	void populateSqr();
 	void populatePieces();
 	void populateBdr();

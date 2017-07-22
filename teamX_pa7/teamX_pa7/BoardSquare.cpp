@@ -9,13 +9,14 @@ void BoardSquare::onClick(){
 }
 
 void BoardSquare::draw(sf::RenderTarget& target, sf::RenderStates states) const{
-	Sprite::draw(target, states);
+	target.draw(sprite, states);
 }
 
 BoardSquare::BoardSquare(GameManager & _manager, sf::Texture & _texture, sf::Vector2f _pos)
-: manager(_manager), Sprite(_texture)
+: manager(_manager)
 {
-	move(_pos);
+	sprite.setTexture(_texture);
+	sprite.move(_pos);
 }
 
 BoardSquare::~BoardSquare(){

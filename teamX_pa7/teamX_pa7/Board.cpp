@@ -1,6 +1,6 @@
 #include "Board.h"
 
-Board::Board(GameManager & _manager)
+Board::Board(GameManager * _manager)
 : manager(_manager)
 {
 	redSqr.loadFromFile("redSquare.bmp");
@@ -21,16 +21,16 @@ Board::Board(GameManager & _manager)
 	populatePieces();
 	populateBdr();
 	for (int i = 0; i < 16; i++){
-		manager.addObject(player1Pieces[i]);
+		manager->addObject(player1Pieces[i]);
 	}
 	for (int i = 0; i < 16; i++){
-		manager.addObject(player2Pieces[i]);
+		manager->addObject(player2Pieces[i]);
 	}
 	for (int i = 0; i < 64; i++){
-		manager.addObject(boardSqr[i]);
+		manager->addObject(boardSqr[i]);
 	}
 	for (int i = 0; i < 8; i++){
-		manager.addObject(boardBdr[i]);
+		manager->addObject(boardBdr[i]);
 	}
 }
 
@@ -60,7 +60,8 @@ Board::~Board(){
 void Board::populateSqr(){
 	sf::Vector2f pos;
 	float scale = 1;
-	for (int i = 0, bool j = false ; i < 64; i++){
+	bool j = false;
+	for (int i = 0; i < 64; i++){
 		pos.x = (i % 8) * scale;
 		pos.y = (i / 8) * scale;
 		if (i % 8 == 0){
@@ -68,18 +69,18 @@ void Board::populateSqr(){
 		}
 		if (i % 2 == 0){
 			if (!j){
-				boardSqr[i] = new BoardSquare(manager, redSqr, pos);
+				boardSqr[i] = new BoardSquare(*manager, redSqr, pos);
 			}
 			else{
-				boardSqr[i] = new BoardSquare(manager, blackSqr, pos);
+				boardSqr[i] = new BoardSquare(*manager, blackSqr, pos);
 			}
 		}
 		else{
 			if (!j){
-				boardSqr[i] = new BoardSquare(manager, blackSqr, pos);
+				boardSqr[i] = new BoardSquare(*manager, blackSqr, pos);
 			}
 			else{
-				boardSqr[i] = new BoardSquare(manager, redSqr, pos);
+				boardSqr[i] = new BoardSquare(*manager, redSqr, pos);
 			}
 		}
 	}
