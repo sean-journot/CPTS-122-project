@@ -1,7 +1,7 @@
 #include "BoardSquare.h"
 
 void BoardSquare::setCallBack(ChessPiece * _callBack){
-
+	callBack = _callBack;
 }
 
 void BoardSquare::onClick(){
@@ -20,5 +20,5 @@ BoardSquare::BoardSquare(GameManager & _manager, sf::Texture & _texture, sf::Vec
 }
 
 BoardSquare::~BoardSquare(){
-
+	// nothig to do here
 }

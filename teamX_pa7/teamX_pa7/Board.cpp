@@ -59,7 +59,7 @@ Board::~Board(){
 
 void Board::populateSqr(){
 	sf::Vector2f pos;
-	float scale = 1;
+	float scale = 400;
 	bool j = false;
 	for (int i = 0; i < 64; i++){
 		pos.x = (i % 8) * scale;

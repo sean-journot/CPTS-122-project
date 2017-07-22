@@ -2,7 +2,7 @@
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(200, 200), "Chess");
+	sf::RenderWindow window(sf::VideoMode(800, 800), "Chess");
 	GameManager game;
 	while (window.isOpen())
 	{
