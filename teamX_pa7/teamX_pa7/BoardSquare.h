@@ -12,6 +12,8 @@ public:
 	void setCallBack(ChessPiece * _callBack);
 	void onClick();
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+	sf::FloatRect getBox();
+	sf::Vector2f getPos();
 
 	BoardSquare(GameManager & _manager, sf::Texture & _texture, sf::Vector2f _pos = sf::Vector2f(0, 0));
 	~BoardSquare();

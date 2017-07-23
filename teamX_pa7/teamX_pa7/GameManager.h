@@ -12,7 +12,7 @@ public:
 	void addObject(GameObject * _obj);
 
 	GameManager();
-	GameManager(GameManager & _old);
+	// should never be copied!
 	~GameManager();
 private:
 	std::vector<GameObject*> gameObjects;

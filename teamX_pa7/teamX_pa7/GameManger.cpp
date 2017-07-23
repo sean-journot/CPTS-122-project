@@ -5,16 +5,20 @@ GameManager::GameManager()
 	gameBoard = new Board(this);
 }
 
-GameManager::GameManager(GameManager & _old){
-
-}
-
 GameManager::~GameManager(){
-
+	delete gameBoard;
 }
 
 void GameManager::processEvent(sf::Event _event){
-
+	if (_event.type == sf::Event::MouseButtonPressed){
+		if (_event.mouseButton.button == sf::Mouse::Left){
+			for (int i = 0; i < gameObjects.size(); i++){
+				if (gameObjects[i] != nullptr && gameObjects[i]->getBox().contains(_event.mouseButton.x, _event.mouseButton.y)){
+					gameObjects[i]->onClick();
+				}
+			}
+		}
+	}
 }
 
 void GameManager::draw(sf::RenderWindow & _window){

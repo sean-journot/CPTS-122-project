@@ -3,7 +3,12 @@
 #include "GameManager.h"
 #include "ChessPiece.h"
 #include "BoardSquare.h"
-#include "BoardBorder.h"
+#include "Pawn.h"
+#include "Rook.h"
+#include "Knight.h"
+#include "Bishop.h"
+#include "Queen.h"
+#include "King.h"
 
 class GameManager;
 
@@ -16,7 +21,6 @@ private:
 	GameManager * manager;
 	void populateSqr();
 	void populatePieces();
-	void populateBdr();
 
 	sf::Texture redSqr;
 	sf::Texture blackSqr;
@@ -36,5 +40,4 @@ private:
 	ChessPiece * player1Pieces[16];
 	ChessPiece * player2Pieces[16];
 	BoardSquare * boardSqr[64];
-	BoardBorder * boardBdr[8];
 };

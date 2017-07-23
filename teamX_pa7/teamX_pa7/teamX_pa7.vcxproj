@@ -82,15 +82,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bishop.cpp" />
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="BoardSquare.cpp" />
+    <ClCompile Include="ChessPiece.cpp" />
     <ClCompile Include="GameManger.cpp" />
+    <ClCompile Include="King.cpp" />
+    <ClCompile Include="Knight.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Pawn.cpp" />
+    <ClCompile Include="Queen.cpp" />
+    <ClCompile Include="Rook.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bishop.h" />
     <ClInclude Include="Board.h" />
-    <ClInclude Include="BoardBorder.h" />
     <ClInclude Include="BoardSquare.h" />
     <ClInclude Include="ChessPiece.h" />
     <ClInclude Include="Everything.h" />

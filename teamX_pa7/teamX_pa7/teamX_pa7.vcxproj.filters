@@ -39,6 +39,27 @@
     <ClCompile Include="BoardSquare.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ChessPiece.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pawn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Rook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Knight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bishop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Queen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="King.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bishop.h">
@@ -67,9 +88,6 @@
     </ClInclude>
     <ClInclude Include="GameObject.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BoardBorder.h">
-      <Filter>Header Files\Board</Filter>
     </ClInclude>
     <ClInclude Include="Everything.h">
       <Filter>Header Files</Filter>

@@ -5,6 +5,5 @@
 #include "Knight.h"
 #include "King.h"
 #include "Queen.h"
-#include "BoardBorder.h"
 #include "BoardSquare.h"
 #include "Board.h"
