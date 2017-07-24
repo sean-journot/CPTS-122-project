@@ -24,12 +24,17 @@ sf::FloatRect ChessPiece::getBox(){
 	return sprite.getGlobalBounds();
 }
 
+bool ChessPiece::isKing(){
+	return king;
+}
+
 ChessPiece::ChessPiece(GameManager & _manager, sf::Texture & _texture, sf::Vector2f _pos, BoardSquare * _bPtr)
 :manager(_manager)
 {
 	sprite.setTexture(_texture);
 	sprite.move(_pos);
 	bPtr = _bPtr;
+	bPtr->setPiecePointer(this);
 }
 
 ChessPiece::~ChessPiece(){

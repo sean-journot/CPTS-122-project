@@ -7,6 +7,7 @@ std::vector<std::string> Pawn::getMoves(){
 Pawn::Pawn(GameManager & _manager, sf::Texture & _texture, sf::Vector2f _pos)
 :ChessPiece(_manager, _texture, _pos)
 {
+	king = false;
 	moves.push_back("ENUL");
 	moves.push_back("ENUR");
 	moves.push_back("BNU");

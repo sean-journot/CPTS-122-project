@@ -5,18 +5,18 @@ Board::Board(GameManager * _manager)
 {
 	redSqr.loadFromFile("redSquare.bmp");
 	blackSqr.loadFromFile("blackSquare.bmp");
-	redPawn.loadFromFile("redPawn.bmp");
-	redRook.loadFromFile("redRook.bmp");
-	redKnight.loadFromFile("redKnight.bmp");
-	redBishop.loadFromFile("redBishop.bmp");
-	redQueen.loadFromFile("redQueen.bmp");
-	redKing.loadFromFile("redKing.bmp");
-	blackPawn.loadFromFile("blackPawn.bmp");
-	blackRook.loadFromFile("blackRook.bmp");
-	blackKnight.loadFromFile("blackKnight.bmp");
-	blackBishop.loadFromFile("blackBishop.bmp");
-	blackQueen.loadFromFile("blackQueen.bmp");
-	blackKing.loadFromFile("blackKing.bmp");
+	redPawn.loadFromFile("redPawn.png");
+	redRook.loadFromFile("redRook.png");
+	redKnight.loadFromFile("redKnight.png");
+	redBishop.loadFromFile("redBishop.png");
+	redQueen.loadFromFile("redQueen.png");
+	redKing.loadFromFile("redKing.png");
+	blackPawn.loadFromFile("blackPawn.png");
+	blackRook.loadFromFile("blackRook.png");
+	blackKnight.loadFromFile("blackKnight.png");
+	blackBishop.loadFromFile("blackBishop.png");
+	blackQueen.loadFromFile("blackQueen.png");
+	blackKing.loadFromFile("blackKing.png");
 	populateSqr();
 	populatePieces();
 	for (int i = 0; i < 16; i++){
@@ -91,11 +91,26 @@ void Board::populateSqr(){
 
 void Board::populatePieces(){
 	player1Pieces[0] = new Rook(*manager, redRook, boardSqr[56]->getPos(), boardSqr[56]);
-	player1Pieces[1] = new Knight(*manager, redRook, boardSqr[57]->getPos(), boardSqr[57]);
-	player1Pieces[2] = new Bishop(*manager, redRook, boardSqr[58]->getPos(), boardSqr[58]);
-	player1Pieces[3] = new King(*manager, redRook, boardSqr[59]->getPos(), boardSqr[59]);
-	player1Pieces[4] = new Queen(*manager, redRook, boardSqr[60]->getPos(), boardSqr[60]);
-	player1Pieces[5] = new Bishop(*manager, redRook, boardSqr[61]->getPos(), boardSqr[61]);
-	player1Pieces[6] = new Knight(*manager, redRook, boardSqr[62]->getPos(), boardSqr[62]);
+	player1Pieces[1] = new Knight(*manager, redKnight, boardSqr[57]->getPos(), boardSqr[57]);
+	player1Pieces[2] = new Bishop(*manager, redBishop, boardSqr[58]->getPos(), boardSqr[58]);
+	player1Pieces[3] = new King(*manager, redKing, boardSqr[59]->getPos(), boardSqr[59]);
+	player1Pieces[4] = new Queen(*manager, redQueen, boardSqr[60]->getPos(), boardSqr[60]);
+	player1Pieces[5] = new Bishop(*manager, redBishop, boardSqr[61]->getPos(), boardSqr[61]);
+	player1Pieces[6] = new Knight(*manager, redKnight, boardSqr[62]->getPos(), boardSqr[62]);
 	player1Pieces[7] = new Rook(*manager, redRook, boardSqr[63]->getPos(), boardSqr[63]);
+	for (int i = 0; i < 8; i++){
+		player1Pieces[i+8] = new Rook(*manager, redPawn, boardSqr[48+i]->getPos(), boardSqr[48+i]);
+	}
+
+	player2Pieces[0] = new Rook(*manager, blackRook, boardSqr[0]->getPos(), boardSqr[0]);
+	player2Pieces[1] = new Knight(*manager, blackKnight, boardSqr[1]->getPos(), boardSqr[1]);
+	player2Pieces[2] = new Bishop(*manager, blackBishop, boardSqr[2]->getPos(), boardSqr[2]);
+	player2Pieces[3] = new Queen(*manager, blackQueen, boardSqr[3]->getPos(), boardSqr[3]);
+	player2Pieces[4] = new King(*manager, blackKing, boardSqr[4]->getPos(), boardSqr[4]);
+	player2Pieces[5] = new Bishop(*manager, blackBishop, boardSqr[5]->getPos(), boardSqr[5]);
+	player2Pieces[6] = new Knight(*manager, blackKnight, boardSqr[6]->getPos(), boardSqr[6]);
+	player2Pieces[7] = new Rook(*manager, blackRook, boardSqr[7]->getPos(), boardSqr[7]);
+	for (int i = 0; i < 8; i++){
+		player2Pieces[i + 8] = new Rook(*manager, blackPawn, boardSqr[8 + i]->getPos(), boardSqr[8 + i]);
+	}
 }

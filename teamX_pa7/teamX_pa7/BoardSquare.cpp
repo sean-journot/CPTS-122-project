@@ -21,6 +21,10 @@ sf::Vector2f BoardSquare::getPos(){
 	return sprite.getPosition();
 }
 
+void BoardSquare::setPiecePointer(ChessPiece * _pPtr){
+	pPtr = _pPtr;
+}
+
 BoardSquare::BoardSquare(GameManager & _manager, sf::Texture & _texture, sf::Vector2f _pos)
 : manager(_manager)
 {

@@ -7,6 +7,7 @@ std::vector<std::string> King::getMoves(){
 King::King(GameManager & _manager, sf::Texture & _texture, sf::Vector2f _pos, BoardSquare * _bPtr)
 :ChessPiece(_manager, _texture, _pos, _bPtr)
 {
+	king = true;
 	moves.push_back("TNU");
 	moves.push_back("TND");
 	moves.push_back("TNL");
