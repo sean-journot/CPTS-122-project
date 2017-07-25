@@ -5,7 +5,7 @@ class GameObject
 	: public sf::Drawable
 {
 public:
-	void setClickable(bool _set){ clickable = _set; }
+	virtual void setClickable(bool _set){ clickable = _set; }
 	bool isClickable(){ return clickable; }
 	virtual void onClick() = 0;
 	virtual sf::FloatRect getBox() = 0;

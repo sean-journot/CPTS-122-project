@@ -99,7 +99,7 @@ void Board::populatePieces(){
 	player1Pieces[6] = new Knight(*manager, redKnight, boardSqr[62]->getPos(), boardSqr[62]);
 	player1Pieces[7] = new Rook(*manager, redRook, boardSqr[63]->getPos(), boardSqr[63]);
 	for (int i = 0; i < 8; i++){
-		player1Pieces[i+8] = new Rook(*manager, redPawn, boardSqr[48+i]->getPos(), boardSqr[48+i]);
+		player1Pieces[i+8] = new Pawn(*manager, redPawn, false, boardSqr[48+i]->getPos(), boardSqr[48+i]);
 	}
 
 	player2Pieces[0] = new Rook(*manager, blackRook, boardSqr[0]->getPos(), boardSqr[0]);
@@ -111,6 +111,62 @@ void Board::populatePieces(){
 	player2Pieces[6] = new Knight(*manager, blackKnight, boardSqr[6]->getPos(), boardSqr[6]);
 	player2Pieces[7] = new Rook(*manager, blackRook, boardSqr[7]->getPos(), boardSqr[7]);
 	for (int i = 0; i < 8; i++){
-		player2Pieces[i + 8] = new Rook(*manager, blackPawn, boardSqr[8 + i]->getPos(), boardSqr[8 + i]);
+		player2Pieces[i + 8] = new Pawn(*manager, blackPawn, true, boardSqr[8 + i]->getPos(), boardSqr[8 + i]);
+	}
+}
+
+void Board::setPlayer1Name(std::string _name){
+	for (int i = 0; i < 16; i++){
+		player1Pieces[i]->setPlayerName(_name);
+	}
+}
+
+void Board::setPlayer2Name(std::string _name){
+	for (int i = 0; i < 16; i++){
+		player2Pieces[i]->setPlayerName(_name);
+	}
+}
+
+void Board::player1Click(){
+	for (int i = 0; i < 16; i++){
+		if (player1Pieces[i]->getBoardPtr() != nullptr){
+			player1Pieces[i]->getBoardPtr()->setClickable(true);
+		}
+	}
+}
+
+void Board::player1NoClick(){
+	for (int i = 0; i < 16; i++){
+		if (player1Pieces[i]->getBoardPtr() != nullptr){
+			player1Pieces[i]->getBoardPtr()->setClickable(false);
+		}
+	}
+}
+
+void Board::player2Click(){
+	for (int i = 0; i < 16; i++){
+		if (player2Pieces[i]->getBoardPtr() != nullptr){
+			player2Pieces[i]->getBoardPtr()->setClickable(true);
+		}
+	}
+}
+
+void Board::player2NoClick(){
+	for (int i = 0; i < 16; i++){
+		if (player2Pieces[i]->getBoardPtr() != nullptr){
+			player2Pieces[i]->getBoardPtr()->setClickable(false);
+		}
+	}
+}
+
+void Board::boardNoClick(){
+	for (int i = 0; i < 64; i++){
+		boardSqr[i]->setClickable(false);
+	}
+}
+
+void Board::boadResetCallBack(){
+	for (int i = 0; i < 64; i++){
+		boardSqr[i]->setCallBack(nullptr);
 	}
 }

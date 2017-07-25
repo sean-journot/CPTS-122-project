@@ -15,6 +15,14 @@ class GameManager;
 class Board
 {
 public:
+	void setPlayer1Name(std::string _name);
+	void setPlayer2Name(std::string _name);
+	void player1Click();
+	void player1NoClick();
+	void player2Click();
+	void player2NoClick();
+	void boardNoClick();
+	void boadResetCallBack();
 	Board(GameManager * _manager);
 	~Board();
 private:

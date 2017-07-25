@@ -4,6 +4,19 @@ void ChessPiece::onClick(){
 	// does nothing on click
 }
 
+bool ChessPiece::capture(){
+	bPtr->setPiecePointer(nullptr);
+	bPtr = nullptr;
+	sprite.setPosition(-100, -100);
+	if (isKing()){
+		manager.gameOverBro();
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
 void ChessPiece::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 	target.draw(sprite, states);
 }
@@ -17,7 +30,15 @@ void ChessPiece::setBoardPtr(BoardSquare * _bPtr){
 }
 
 void ChessPiece::movePiece(sf::Vector2f _pos){
-	sprite.move(_pos);
+	sprite.setPosition(_pos);
+}
+
+void ChessPiece::setPlayerName(std::string _name){
+	playerName = _name;
+}
+
+std::string ChessPiece::getPlayerName(){
+	return playerName;
 }
 
 sf::FloatRect ChessPiece::getBox(){
